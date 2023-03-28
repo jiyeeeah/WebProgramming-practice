@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>졸업 연주회 프로그램</title>
+    <link rel="stylesheet" type="text/css" href="graduation.css">
+  </head>
+  <body>
+    <header>
+      <h1>졸업 연주회 프로그램</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href='#'>Home</a></li>     
+        <li><a href='#'>공연 일정</a></li>
+        <li><a href='#'>아티스트 소개</a></li>
+        <li><a href='#'>관람 예약</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>공연 일정</h2>
+      <p id="schedule-info">아직 확정되지 않은 일정입니다. 곧 업데이트 될 예정입니다.</p>
+      <button onclick="updateSchedule()">일정 업데이트</button>
+
+      <h2>곡 소개</h2>
+      <ul>
+        <li>
+          <h3>봄날 - 방탄소년단</h3>
+          <p>방탄소년단의 대표적인 봄노래로, 아름다운 멜로디와 함께 희망과 사랑의 메시지를 전달합니다.</p>
+        </li>
+        <li>
+          <h3>그대라는 시 - 태연</h3>
+          <p>태연의 뛰어난 보컬과 따뜻한 멜로디가 어우러진 곡으로, 봄의 설렘과 사랑의 감정을 담고 있습니다.</p>
+        </li>
+        <li>
+          <h3>꽃갈피 - IU</h3>
+          <p>IU의 매력적인 보컬과 봄을 상징하는 아름다운 멜로디가 조화를 이룬 곡입니다.</p>
+        </li>
+        <li>
+          <h3>나만, 봄 - 볼빨간사춘기</h3>
+          <p>볼빨간사춘기의 유쾌하면서도 따뜻한 감성이 담긴 곡으로, 봄을 기다리는 설레임을 전합니다.</p>
+        </li>
+      </ul>
+    </main>
+    
+    <footer>
+      <p>Copyright © 2023
+        <a href="mailto:sije3757@snu.ac.kr">sije3757@snu.ac.kr</a>
+      </p>
+    </footer>
+    <script>
+      function updateSchedule() {
+        document.getElementById("schedule-info").innerHTML = "2023년 11월 00일(멍) 오후 5시, 서울대학교 예술관 콘서트홀";
+      }
+    </script>
+  </body>
+</html>
