@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiye's Stop Watch</title>
+  <script>
+    window.onload = function () {
+    }
+  </script>
+</head>
+<body>
+  <div id="stopwatch">00:00:00</div>
+  <button id="startBtn">Start</button>
+  <button id="stopBtn">Stop</button>
+  <button id="resetBtn">Reset</button> 
+  <style>
+    #stopwatch {
+      font-size: 3em;
+      text-align: center;
+      margin: 50px auto;
+      display: block;
+    }
+  </style>
+  <script>
+    let ms = 0;
+    let s = 0;
+    let m = 0;
+    let timer;
+    
+    function startTimer() {
+      timer = setInterval(updateTimer, 10);
+    }
+    
+    function updateTimer() {
+      ms += 10;
+      if (ms == 1000) {
+        ms = 0;
+        s++;
+      }
+      if (s == 60) {
+        s = 0;
+        m++;
+      }
+      document.getElementById("stopwatch").innerHTML = (m < 10 ? "0" + m : m) + ":" + (s < 10 ? "0" + s : s) + ":" + (ms < 10 ? "00" + ms : ms < 100 ? "0" + ms : ms);
+    }
+    
+    function stopTimer() {
+      clearInterval(timer);
+    }
+    
+    function resetTimer() {
+      clearInterval(timer);
+      ms = 0;
+      s = 0;
+      m = 0;
+      document.getElementById("stopwatch").innerHTML = "00:00:00";
+    }
+    
+    document.getElementById("startBtn").addEventListener("click", startTimer);
+    document.getElementById("stopBtn").addEventListener("click", stopTimer);
+    document.getElementById("resetBtn").addEventListener("click", resetTimer);
+  </script>
+</body>
+</html>
